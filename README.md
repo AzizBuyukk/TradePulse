@@ -1,15 +1,46 @@
 # TradePulse
 
-ICT tarzı işlemler için kişisel trade günlüğü. Windows masaüstü uygulaması; veriler yerel SQL Server'da durur.
+TradePulse, işlemlerini kaydedip analiz etmen için geliştirilmiş kişisel bir trade günlüğü. Sadece "kazandım mı, kaybettim mi" sorusuna değil, **neden** kazandığına ya da kaybettiğine de odaklanır: her işlemde setup'ını, hatalarını ve işlemin üç aşamasında ne hissettiğini kaydedersin, uygulama da hangi durumda daha iyi işlem yaptığını sayılarla gösterir.
 
-## Özellikler
+Windows masaüstü uygulaması olarak çalışır. Tüm veriler senin bilgisayarındaki SQL Server'da durur; internete hiçbir şey gönderilmez.
 
-- **İşlem kaydı:** giriş, stop, hedef ve çıkış fiyatları; R ve P&L otomatik hesaplanır.
-- **Duygu takibi:** girişte, işlem sırasında ve kapanışta ne hissettiğin, her aşama için not.
-- **Grafikler:** HTF ve LTF ekran görüntüleri; dosya seç, sürükle bırak veya Ctrl+V ile yapıştır.
-- **Dashboard:** kümülatif P&L, işlem ve gün bazında win rate, profit factor, aylık takvim, defter skoru.
-- **Raporlar:** setup, duygu, hata, seans, enstrüman ve güne göre win rate ve P&L.
-- Gece ve gündüz modu.
+## Neler sunuyor?
+
+### İşlem kaydı
+- Tarih, saat, seans (New York, London, Asya), enstrüman, yön (Long/Short) ve işlem türü (Demo/Gerçek)
+- Giriş, stop, hedef ve çıkış fiyatları; **planlanan RR, R sonucu ve P&L otomatik hesaplanır**
+- Risk tutarı ($) ve risk yüzdesi; P&L elle de girilebilir
+- Setup etiketleri (FVG, Order Block, Liquidity Sweep, MSS/CHoCH vb.) ve kendi setup'larını ekleme
+- Hata etiketleri (erken giriş, stopu oynatma, FOMO, intikam işlemi vb.)
+- 1–5 arası "kurallara uyum" puanı, analiz notu ve işlemden çıkarılan ders
+
+### Duygu takibi
+- **Girerken, işlemdeyken ve kapanınca** ne hissettiğini ayrı ayrı seçme
+- Her aşama için serbest not
+- Raporlarda "hangi duyguyla girdiğimde kazanıyorum?" sorusunun cevabı
+
+### Grafik ekran görüntüleri
+- Her işleme ayrı **HTF** (4H/Günlük) ve **LTF** (15m/5m/1m) görselleri
+- Dosya seçerek, sürükleyip bırakarak veya **Ctrl+V** ile yapıştırarak ekleme
+- İşlem detayında büyük görüntüleme
+
+### Dashboard
+- Net P&L, profit factor, ortalama kazanç/kayıp oranı
+- İşlem bazında ve gün bazında **win rate** halka grafikleri
+- **Günlük kümülatif P&L** ve günlük net P&L grafikleri
+- Aylık takvim: her günün P&L'i, işlem sayısı, win rate ve haftalık toplamlar
+- **Defter skoru:** win rate, profit factor, kazanç/kayıp oranı, gün win rate ve kurala uyumdan hesaplanan 0–100 puan ve radar grafiği
+- Otomatik çıkarımlar: en iyi ve en kötü giriş duygusu, en çok kaybettiren hata, en kârlı setup
+
+### İşlem günlüğü ve raporlar
+- Tüm işlemleri arama ve filtreleme (sonuç, setup, Demo/Gerçek, ay)
+- Setup, giriş/işlem sırası/sonuç duygusu, hata, seans, enstrüman, haftanın günü ve kurala uyuma göre **win rate, net P&L ve R** raporları
+
+### Diğer
+- Gece ve gündüz modu
+- Veriler SQL Server'da: SSMS'ten kendi sorgularını yazabilirsin (`dbo.vTradeSummary` görünümü hazır)
+- Tek tıkla açılan `.exe` olarak paketlenebilir
+
 
 ## Gereksinimler
 
