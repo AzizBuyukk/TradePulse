@@ -1,0 +1,17 @@
+# Kişisel veriler: işlemler, ekran görüntüleri, hata kaydı, pencere profili
+data/
+
+# Yerel ayarlar (sunucu adı, kullanıcı adı, şifre)
+config.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# PyInstaller çıktıları
+build/
+dist/
+*.spec
+TradePulse.exe
